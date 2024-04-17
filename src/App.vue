@@ -1,12 +1,16 @@
 <template>
-  <h1>Ciao</h1>
+  <HeaderComponent />
 </template>
 
 <script>
 import axios from 'axios';
+import HeaderComponent from './components/HeaderComponent.vue'
 import { store } from './store.js';
 export default {
   name: 'App',
+  components: {
+    HeaderComponent
+  },
   data() {
     return {
       store
