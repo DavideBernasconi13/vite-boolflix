@@ -1,6 +1,5 @@
 <template>
-  <h1 class="text-center">Ciao</h1>
-  <i class="fa fa-solid fa-home"></i>
+  <h1>Ciao</h1>
 </template>
 
 <script>
@@ -15,20 +14,20 @@ export default {
   },
   methods: {
     getMovies() {
-      axios.get(this.store.apiUrl + this.store.endpoint.movie, this.store.option).then((res) => {
-        console.log(data.res.result)
+      axios.get(this.store.apiUrl + this.store.endpoint.movie, this.store.options).then((res) => {
+        console.log(res.data.results)
       })
     },
     getTvSeries() {
-      axios.get(this.store.apiUrl + this.store.endpoint.serie, this.store.option).then((res) => {
-        console.log(data.res.result)
+      axios.get(this.store.apiUrl + this.store.endpoint.serie, this.store.options).then((res) => {
+        console.log(res.data.results)
       })
     }
   },
   created() {
-  getMovies();
-  getTVSeries();
-}
+    this.getMovies();
+    this.getTvSeries();
+  }
 }
 </script>
 

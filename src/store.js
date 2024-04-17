@@ -1,4 +1,4 @@
-import { reactive } from 'Vue';
+import { reactive } from 'vue';
 
 export const store = reactive({
     apiUrl: 'https://api.themoviedb.org/3/',
@@ -6,12 +6,11 @@ export const store = reactive({
         movie: 'search/movie',
         serie: 'search/tv'
     },
-    option: {
+    options: {
         params: {
             api_key: 'fae310742a2c62f6d86e0f01886b7afb',
             query: 'a'
         }
-    }, 
-    imageBaseUrl: ''
+    },
 
 }); 
