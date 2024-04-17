@@ -12,5 +12,7 @@ export const store = reactive({
             query: 'a'
         }
     },
-
+    imageUrl: 'https://image.tmdb.org/t/p/original',
+    movie: [],
+    series: []
 }); 
