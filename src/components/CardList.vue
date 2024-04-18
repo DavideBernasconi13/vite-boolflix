@@ -1,6 +1,12 @@
 <template>
     <div class="container">
-        <CardComponent />
+        <h2>{{ title }}</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+                <CardComponent />
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -10,6 +16,10 @@ export default {
     name: 'CardList',
     components: {
         CardComponent
+    },
+    props: {
+        title: String,
+        list: Array
     }
 }
 </script>

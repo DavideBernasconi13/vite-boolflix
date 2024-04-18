@@ -1,6 +1,5 @@
 <template>
     <main>
-        Main component
         <CardList />
         <CardList />
     </main>
