@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent @formSearch="getQuery()" />
+  <HeaderComponent @formSearch="getQuery" />
   <MainComponent />
 </template>
 
@@ -35,11 +35,10 @@ export default {
       })
     },
     getQuery() {
-      this.store.options.params.query = this.store.query;
-      console.log('La query nello store è:', this.store.query);
+      //this.store.options.params.query = this.store.query;
+      console.log('La query nello store è:', this.store.options.params.query);
       this.getMovies();
       this.getTvSeries();
-      console.log('ESEGUITO');
     }
   },
   created() {
