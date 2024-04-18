@@ -2,9 +2,9 @@
     <div class="container">
         <h2>{{ title }}</h2>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-3" v-for="(item, index) in list" :key=item.id>
-                <CardComponent />
-                {{ item.title || item.name }}
+            <div class="col-12 col-md-6 col-lg-3" v-for="(card, index) in list" :key=card.id>
+                <CardComponent :item="card"/>
+                
             </div>
         </div>
 
