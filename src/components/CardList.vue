@@ -1,6 +1,5 @@
 <template>
-    <div>
-        cardlist
+    <div class="container">
         <CardComponent />
     </div>
 </template>

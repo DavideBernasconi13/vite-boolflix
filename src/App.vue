@@ -29,7 +29,7 @@ export default {
         // handle error
         console.log(error);
       }).finally(() => {
-        // always executed
+        console.log('finally: movie')
       });
     },
     getTvSeries() {
@@ -41,7 +41,7 @@ export default {
         // handle error
         console.log(error);
       }).finally(() => {
-        // always executed
+        console.log('finally: series tv')
       });
     },
     getQuery() {

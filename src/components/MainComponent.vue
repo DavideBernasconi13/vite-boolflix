@@ -1,6 +1,7 @@
 <template>
-    <main class="bg-secondary">
+    <main>
         Main component
+        <CardList />
         <CardList />
     </main>
 
@@ -18,8 +19,4 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-main {
-    height: calc(100vh - 60px);
-}
-</style>
+<style lang="scss" scoped></style>
