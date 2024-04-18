@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent @formSearch="getQuery" />
+  <HeaderComponent @searchApi="getQuery" />
   <MainComponent />
 </template>
 
@@ -24,26 +24,38 @@ export default {
       axios.get(this.store.apiUrl + this.store.endpoint.movie, this.store.options).then((res) => {
         //console.log(res.data.results);
         this.store.movie = res.data.results;
-        console.log('Lista dei film', this.store.movie)
-      })
+        //console.log('Lista dei film', this.store.movie)
+      }).catch((error) => {
+        // handle error
+        console.log(error);
+      }).finally(() => {
+        // always executed
+      });
     },
     getTvSeries() {
       axios.get(this.store.apiUrl + this.store.endpoint.serie, this.store.options).then((res) => {
         // console.log(res.data.results);
         this.store.series = res.data.results;
-        console.log('lista serie tv', res.data.results);
-      })
+        //console.log('lista serie tv', this.store.series);
+      }).catch((error) => {
+        // handle error
+        console.log(error);
+      }).finally(() => {
+        // always executed
+      });
     },
     getQuery() {
-      //this.store.options.params.query = this.store.query;
-      console.log('La query nello store è:', this.store.options.params.query);
-      this.getMovies();
-      this.getTvSeries();
+      //this.store.options.params.query = this.store.query; <!---sbagliato!!!!-->
+      //console.log('La query nello store è:', this.store.options.params.query);
+      if (this.store.options.params.query) {
+        this.getMovies();
+        this.getTvSeries();
+      }
+
     }
   },
   created() {
-    // this.getMovies();
-    // this.getTvSeries();
+
   }
 }
 </script>
