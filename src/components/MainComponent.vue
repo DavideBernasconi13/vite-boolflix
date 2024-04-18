@@ -1,7 +1,7 @@
 <template>
     <main>
-        <CardList />
-        <CardList />
+        <CardList title="Movie" :list="store.movie" />
+        <CardList title="Series" :list="store.series" />
     </main>
 
 </template>
@@ -13,6 +13,11 @@ export default {
     name: 'MainComponent',
     components: {
         CardList
+    },
+    data() {
+        return{
+            store
+        }
     }
 }
 
