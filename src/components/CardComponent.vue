@@ -91,6 +91,7 @@ export default {
     aspect-ratio: 1/1.5;
     background-color: transparent;
     perspective: 1000px;
+    cursor: pointer;
 
     .flip-card-inner {
         position: relative;
@@ -129,12 +130,12 @@ export default {
     /* -------------------------------------------------------------------------------- */
     /* width */
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 5px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        border-radius: 10px;
+        border-radius: 3px;
     }
 
     /* Handle */
