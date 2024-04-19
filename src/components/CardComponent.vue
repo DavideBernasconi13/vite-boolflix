@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ item.title || item.name }}</h5>
@@ -14,13 +14,13 @@
 import { store } from '../store.js';
 export default {
     name: 'CardComponent',
+    props: {
+        item: Object
+    },
     data() {
         return {
             store
         }
-    },
-    props: {
-        list: Object
     }
 }
 </script>

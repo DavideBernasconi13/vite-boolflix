@@ -3,8 +3,8 @@
         <h2>{{ title }}</h2>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-3" v-for="(card, index) in list" :key=card.id>
-                <CardComponent :item="card"/>
-                
+                <CardComponent :item="card" />
+
             </div>
         </div>
 
@@ -13,6 +13,7 @@
 
 <script>
 import CardComponent from './CardComponent.vue';
+import { store } from '../store.js';
 export default {
     name: 'CardList',
     components: {
@@ -21,6 +22,11 @@ export default {
     props: {
         title: String,
         list: Array
+    },
+    data() {
+        return {
+            store
+        }
     }
 }
 </script>
