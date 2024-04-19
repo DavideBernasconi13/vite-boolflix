@@ -124,30 +124,29 @@ export default {
         overflow-y: auto;
         overflow-x: hidden;
     }
+}
 
-    /* -------------------------------------------------------------------------------- */
-    /* ! Scrollbar custom */
-    /* -------------------------------------------------------------------------------- */
-    /* width */
-    ::-webkit-scrollbar {
-        width: 5px;
-    }
+/* -------------------------------------------------------------------------------- */
+/* ! Scrollbar custom */
+/* -------------------------------------------------------------------------------- */
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
 
-    /* Track */
-    ::-webkit-scrollbar-track {
-        border-radius: 3px;
-    }
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 3px;
+}
 
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: $mainbg;
-        border-radius: 10px;
-    }
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $mainbg;
+    border-radius: 10px;
+}
 
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-        background: $colorred;
-    }
-
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $colorred;
 }
 </style>
