@@ -12,6 +12,9 @@
                         <div class="flag">
                             <span>Lingua originale: </span><img :src="imgflag" :alt="item.original_language + ' flag'">
                         </div>
+                        <div class="overview">
+                            {{ item.overview }}
+                        </div>
                         <div class="stars">
                             <i :class="vote >= n ? 'fa-solid' : 'fa-regular'" class="fa-star" v-for="n in 5"></i>
                         </div>
@@ -63,8 +66,21 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
 
+.card {
+    border: 0.5px solid $headerbg;
+}
+
 .flag img {
     height: 25px;
+}
+
+.flag {
+    padding-bottom: 20px;
+    border-bottom: 2px solid $mainbg;
+}
+
+.overview {
+    padding: 20px 0px;
 }
 
 .stars {
@@ -80,7 +96,7 @@ export default {
         position: relative;
         width: 100%;
         height: 100%;
-        text-align: center;
+        text-align: left;
         transition: transform 0.5s;
         transform-style: preserve-3d;
     }
@@ -104,6 +120,32 @@ export default {
         background-color: $back;
         color: $whitetext;
         transform: rotateY(180deg);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* -------------------------------------------------------------------------------- */
+    /* ! Scrollbar custom */
+    /* -------------------------------------------------------------------------------- */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $mainbg;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $colorred;
     }
 
 }
