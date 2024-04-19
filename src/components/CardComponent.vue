@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img class="card-img-top" :src="store.imageUrl + item.poster_path" :alt="item.title || item.name">
+        <img class="card-img-top" :src="noImg" :alt="item.title || item.name">
         <div class="card-body">
             <h4 class="card-title">{{ item.title || item.name }}</h4>
             <h6 class="card-title">Titolo originale: {{ item.original_title || item.original_name }}</h6>
@@ -34,6 +34,13 @@ export default {
                 return `/images/${this.item.original_language}.webp`
             } else {
                 return `/images/Noflag.png`
+            }
+        },
+        noImg() {
+            if (this.item.poster_path === null) {
+                return `/images/placeholder.jpg`
+            } else {
+                return `${this.store.imageUrl + this.item.poster_path}`
             }
         }
     }
