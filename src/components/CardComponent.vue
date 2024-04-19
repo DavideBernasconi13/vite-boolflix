@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <img class="card-img-top" :src="store.imageUrl + item.poster_path" :alt="item.title || item.name">
         <div class="card-body">
             <h5 class="card-title">{{ item.title || item.name }}</h5>
             <p class="card-text">
