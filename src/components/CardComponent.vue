@@ -8,8 +8,10 @@
                 <div class="flag">
                     <span>Lingua originale: </span><img :src="imgflag" :alt="item.original_language + ' flag'">
                 </div>
+                <div class="stars">
+                    <i :class="vote >= n ? 'fa-solid' : 'fa-regular'" class="fa-star" v-for="n in 5"></i>
+                </div>
 
-                <span>{{ item.vote_average }}</span>
             </div>
         </div>
     </div>
@@ -42,6 +44,9 @@ export default {
             } else {
                 return `${this.store.imageUrl + this.item.poster_path}`
             }
+        },
+        vote() {
+            return Math.ceil(this.item.vote_average / 2)
         }
     }
 }
@@ -50,5 +55,9 @@ export default {
 <style lang="scss" scoped>
 .flag img {
     height: 25px;
+}
+
+.stars {
+    color: gold;
 }
 </style>
