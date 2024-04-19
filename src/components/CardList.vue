@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container mb-4">
         <h2>{{ title }}</h2>
-        <div class="row">
+        <div class="row gy-4">
             <div class="col-12 col-md-6 col-lg-3" v-for="(card, index) in list" :key=card.id>
                 <CardComponent :item="card" />
 

@@ -3,9 +3,11 @@
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title">{{ item.title || item.name }}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <p class="card-text">
+                <span>Titolo originale: {{ item.original_title || item.original_name }}</span><br>
+                <span>Lingua originale: {{ item.original_language }} </span><br>
+                <span>{{ item.vote_average }}</span>
+            </p>
         </div>
     </div>
 </template>
