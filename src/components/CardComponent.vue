@@ -6,7 +6,7 @@
             <h6 class="card-title">Titolo originale: {{ item.original_title || item.original_name }}</h6>
             <div class="card-text">
                 <div class="flag">
-                    <span>Lingua originale: </span><img :src="flag" :alt="item.original_language + ' flag'">
+                    <span>Lingua originale: </span><img :src="imgflag" :alt="item.original_language + ' flag'">
                 </div>
 
                 <span>{{ item.vote_average }}</span>
@@ -29,11 +29,11 @@ export default {
         }
     },
     computed: {
-        flag() {
+        imgflag() {
             if (this.flags.includes(this.item.original_language)) {
-                return `/images/${item.original_language}.webp`;
+                return `/images/${this.item.original_language}.webp`
             } else {
-                return `/images/Noflag.png`;
+                return `/images/Noflag.png`
             }
         }
     }
