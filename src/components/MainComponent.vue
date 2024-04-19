@@ -1,7 +1,11 @@
 <template>
     <main>
-        <CardList title="Movie" :list="store.movie" />
-        <CardList title="Series" :list="store.series" />
+        <div class="wrapper" v-if="store.options.params.query != ''">
+            <CardList title="Movie" :list="store.movie" />
+            <CardList title="Series" :list="store.series" />
+        </div>
+        <div v-else>Inserisci una chiave di ricerca</div>
+
     </main>
 
 </template>
